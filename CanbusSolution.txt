@@ -1,0 +1,23 @@
+BRZ is a bit of a sensitive animal, considering they are using toyota-esque Column, and half its canbus.
+
+ZZYY is speed.
+WW is counter 00-FF
+
+0x0D4 0xZZ 0xYY 0xZZ 0xYY 0xZZ 0xYY 0xZZ 0xYY - 20ms
+0x0D1 0xZZ 0xYY 0x00 0x00 0x00 0x00 0x00 0x00 - 20ms
+0x141 0x8F 0x26 0xDF 0x28 0xB8 0x8B 0xa7 0x00 - 10ms
+0x140 0x00 0x00 0xb8 0x0b 0x00 0x00 0x00 0x00 - 10ms
+0x018 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 - 10ms
+0x0D3 0x00 0x00 0x00 0x00 0x00 0x00 0xWW - 200ms
+
+Notes: 
+
+Make sure to send speed as 0 for the first second of communication. Otherwise Column will remain fully off.
+Value of speed for min - max assist is 0 - 3500 in int8. Didn't bother decoding offset and multiplier. 
+Timing of messages IS IMPORTANT. This bastard actually cares about it.
+
+BRZ/FRS/GT86 COLUMNS SUCK FOR AUTOCROSS OR PROLONGED TORQUE APPLIED TO WHEEL. THEY CUT OUT. This is easily fixed on prius controllers. 
+Highly do not recommend ever using these in swaps.
+
+If you are using this information for financial gain, please do me a favor and credit nmstec.ca for it.
+I am doing this purely because theres not many customers actually caring about using BRZ columns as they are overpriced.
